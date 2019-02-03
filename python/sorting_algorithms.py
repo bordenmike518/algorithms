@@ -1,3 +1,12 @@
+'''
+Author  : Michael Borden
+Date    : Mar 20, 2018
+Update  : Feb 3, 2019
+
+Purpose : Sorting algorithm examples. Some extra functions also that will be
+moved to a new file at some point before this message is erased.
+'''
+
 import numpy as np
 
 BITS = 15
@@ -171,12 +180,14 @@ def heapify(A, i, heap_size, reverse=False):
 		A[i], A[largest] = A[largest], A[i]
 		heapify(A, largest, heap_size, reverse)
 
-def quickSort(A, p, r, reverse=False):
+def quickSort(A, p=0, r=None, reverse=False):
 	""" quickSort(A, reverse=False)
 
 	Arguments:
 	----------
 	A (list) - A list to be sorted
+	p (int) - Starting index
+	r (int) - Ending index
 	reverse (bool) - If False, sorts in ascending order, else, descending order
 
 	Notes:
@@ -189,6 +200,8 @@ def quickSort(A, p, r, reverse=False):
 	-----
 	Does not work right.
 	"""
+	if (r == None):
+	    r = len(A) - 1
 	if (p < r):
 		q = partition(A, p, r, reverse)
 		quickSort(A, p, q-1, reverse)
@@ -324,7 +337,7 @@ def main():
 	scramble(array)
 	
 	# Quick Sort
-	quickSort(array, 0, len(array)-1, reverse)
+	quickSort(array)
 	print("Quick Sort -----------")
 	print(array)
 	scramble(array)
