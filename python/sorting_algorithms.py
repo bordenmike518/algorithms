@@ -13,10 +13,12 @@ BITS = 15
 
 def scramble(A):
 	""" scramble(self, A)
-		Arguments:
+	
+	Arguments:
 	----------
 	A (list) - A list to be scrambled
-		Notes:
+		
+	Notes:
 	------
 	Rearranges a list to a different permutation
 	"""
@@ -24,7 +26,8 @@ def scramble(A):
 
 def bubbleSort(A, reverse=False):
 	""" bubbleSort(self, A)
-		Arguments:
+	
+	Arguments:
 	----------
 	A (list) - A list to be sorted
 	reverse (bool) - If False, sorts in ascending order, else, descending order
@@ -41,7 +44,8 @@ def bubbleSort(A, reverse=False):
 
 def insertionSort(A, reverse=False):
 	""" insertionSort(self, A)
-		Arguments:
+	
+	Arguments:
 	----------
 	A (list) - A list to be sorted
 	reverse (bool) - If False, sorts in ascending order, else, descending order
@@ -61,12 +65,14 @@ def insertionSort(A, reverse=False):
 
 def mergeSort(A, p, r, reverse=False):
 	""" mergeSort(self, A, p, r)
-		Arguments:
+	
+	Arguments:
 	----------
 	A (list) - A list to be sorted
 	p (int) - Starting index
 	r (int) - Ending index
-		Notes:
+	
+	Notes:
 	------
 	Complexity is Theta(nlogn)
 	Does not sort in place
@@ -79,7 +85,8 @@ def mergeSort(A, p, r, reverse=False):
 
 def merge(A, p, q, r, reverse):
 	""" merge(self, A, p, q, r)
-		Arguments:
+	
+    Arguments:
 	----------
 	A (list) - A list to be sorted
 	p (int) - Starting index

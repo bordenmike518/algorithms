@@ -1,9 +1,9 @@
 '''
 Author  : Michael Borden
-Date    : 
-Update  : 
+Date    : Feb 3, 2019
+Update  : Feb 3, 2019
 
-Purpose : 
+Purpose : Creates a balanced binary search tree from a list of values.
 '''
 import math
 import numpy as np
@@ -68,6 +68,7 @@ def merge(A, p, q, r, reverse):
 ###############################################################################
 
 class Node:
+    ''' Simple Binary Node Class '''
     def __init__(self, val=None, left=None, right=None):
         self.val = val
         self.left = left
@@ -77,10 +78,23 @@ class Node:
         return '{}'.format(self.val)
 
 class binarySearchTree:
+    ''' Binary Search Tree Class '''
     def __init__(self):
         self.root = Node()
 
     def add_list(self, V):
+        ''' add_list(self, V)
+        
+        Arguments:
+        ----------
+        V (list) - A list to be made into a balanced binary search tree.
+        
+        Example:
+        --------
+        >>> bst = binarySearchTree()
+        >>> l = [3,4,2,6,8]
+        >>> bst.add_list(l)        
+        '''
         mergeSort(V, 0, len(V)-1)
         hlf = math.floor(len(V)/2)
         Vs = V[hlf:]
@@ -92,6 +106,19 @@ class binarySearchTree:
             self.add_val(v, self.root)
 
     def add_val(self, v, node):
+        ''' add_val(self, v, node)
+        
+        Arguments:
+        ----------
+        v (list) - A value to add to the balanced binary search tree.
+        node (Node) - The root node of the balanced binary tree.
+        
+        Example:
+        --------
+        >>> bst = binarySearchTree()
+        >>> v = 3
+        >>> bst.add_val(v, root)
+        '''
         if (v < node.val):
             if (node.left == None):
                 node.left = Node(v)

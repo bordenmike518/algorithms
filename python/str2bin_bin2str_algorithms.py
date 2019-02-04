@@ -29,7 +29,7 @@ def main():
     bits = 8
 
     # Some string
-    s1 = 'Hello, World!'
+    s1 = 'github.com/bordenmike518'
     print('s1 = {}'.format(s1))
 
     # Convert string to binary reperesentation, 7 bit defalt
