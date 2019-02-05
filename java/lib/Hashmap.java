@@ -32,38 +32,34 @@ public class Hashmap<V> {
         int i = index(key);
         if (this.hashmap[i] == null) {
             System.out.println("Hashmap() : ERROR key not in Hashmap.");
-            return null;  // return false?
+            return null;
         }
         Node node = this.hashmap[i];    
         while((String) node.getKey() != key) {
             node = node.getNext();
-            if (node == null)
-                break;
+            if (node == null) {
+                return null;
+            }
         }
-        if (node != null)
-            return (V) node.getVal();
-        else
-            return null;
+        return (V) node.getVal();
     }
 
-    public boolean del(String key) {   // Make boolean output for validity testing?
+    public boolean del(String key) {
         int i = index(key);
-        Node prev = null;
         if (this.hashmap[i] == null) {
             System.out.println("Hashmap() : ERROR key not in Hashmap.");
-            return false;  // return false?
+            return false;
         }
+        Node prev = null;
         Node node = this.hashmap[i];
         while((String) node.getKey() != key) {
             prev = node;
             node = node.getNext();
             if (node == null)
-                break;
+                prev.setNext(null);
+                return true;
         }
-        if (node != null)
-            prev.setNext(node.getNext());
-        else
-            prev.setNext(null);
+        prev.setNext(node.getNext());
         return true;
     }
 
