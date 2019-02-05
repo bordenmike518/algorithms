@@ -36,7 +36,7 @@ void cache2dArray(int ***m, int rows, int columns) {
 }
 
 int levensteinDistance(char *s1, char *s2) {
-    int a=0, b=0, c=0, **m=NULL, x, y, answer;
+    int a=0, b=0, c=0, **m, x, y, answer;
     int i = strlen(s1)+1;
     int j = strlen(s2)+1;
     cache2dArray(&m, i, j);
