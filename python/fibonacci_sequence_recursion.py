@@ -59,12 +59,12 @@ def fib_sequ(n):
 def main():
     # Test cases
     n1 = 0
-    o1 = []
     n2 = 1
-    o2 = [0]
     n3 = 5
-    o3 = [0, 1, 1, 2, 3]
     n4 = 10
+    o1 = []
+    o2 = [0]
+    o3 = [0, 1, 1, 2, 3]
     o4 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
     # Testing
     assert fib_sequ(n1) == o1, 'fib_sequ() : ERROR n = {} failed.'.format(n1)

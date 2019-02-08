@@ -7,65 +7,10 @@ Purpose : Creates a balanced binary search tree from a list of values.
 '''
 import math
 import numpy as np
+from sorting_algorithms import mergeSort
 
 BITS = 15
 
-###############################################################################
-# Support Function
-def mergeSort(A, p, r, reverse=False):
-    """ mergeSort(self, A, p, r)
-        Arguments:
-    ----------
-    A (list) - A list to be sorted
-    p (int) - Starting index
-    r (int) - Ending index
-        Notes:
-    ------
-    Complexity is Theta(nlogn)
-    Does not sort in place
-    """
-    if (p < r):
-        q = (p+r)>>1
-        mergeSort(A, p, q, reverse)
-        mergeSort(A, q+1, r, reverse)
-        merge(A, p, q, r, reverse)
-
-def merge(A, p, q, r, reverse):
-    """ merge(self, A, p, q, r)
-        Arguments:
-    ----------
-    A (list) - A list to be sorted
-    p (int) - Starting index
-    q (int) - Middle index (p <= q <= r)
-    r (int) - Ending index
-
-    TODO:
-    -----
-    Add reverse argument
-    """
-    n1 = q - p + 1
-    n2 = r - q
-    L = np.zeros(n1 + 1, dtype=int)
-    R = np.zeros(n2 + 1, dtype=int)
-    for i in range(n1):
-        L[i] = A[p+i]
-    L[n1] = 1<<BITS
-    for j in range(n2):
-        R[j] = A[q+j+1]
-    R[n2] = 1<<BITS
-    if (reverse):
-        L[n1] *= -1
-        R[n2] *= -1
-    i = 0
-    j = 0
-    for k in range(p, r+1):
-        if ((reverse and L[i] >= R[j]) or (not reverse and L[i] <= R[j])):
-            A[k] = L[i]
-            i += 1
-        else:
-            A[k] = R[j]
-            j += 1
-###############################################################################
 
 class Node:
     ''' Simple Binary Node Class '''
