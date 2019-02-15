@@ -5,6 +5,7 @@ Update  : Feb 7, 2019
 
 Purpose : Create a class HugeInteger which uses a vector of digits to store huge integers. A HugeInteger object has a sign that indicates if the represented integer is non-negative (0) or negative (1). Provide methods parse, toString, add and subtract. Method parse should receive a String, extract each digit using method charAt and place the integer equivalent of each digit into the integer vector. For comparing HugeInteger objects, provide the following methods: isEqualTo, isNotEqualTo, isGreaterThan, isLessThan, isGreaterThanOrEqualTo, and isLessThanOrEqualTo. Each of these is a predicate method that returns true if the relationship holds between the two HugeInteger objects and returns false if the relationship does not hold. Provide a rpedicate method isZero.
 */
+package lib;
 
 class HugeInteger {
     public int[] V;
